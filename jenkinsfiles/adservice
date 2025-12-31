@@ -19,7 +19,7 @@ pipeline {
 
         stage('Checkout from Git') {
             steps {
-                git branch: 'master', url: 'https://github.com/arumullayaswanth/Microservices-E-Commerce-eks-project.git'
+                git branch: 'master', url: 'https://github.com/taki213/Microservices-E-Commerce-eks-project.git'
             }
         }
 
@@ -39,9 +39,9 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 242201296943.dkr.ecr.us-east-1.amazonaws.com
-                    docker tag adservice:latest 242201296943.dkr.ecr.us-east-1.amazonaws.com/adservice:${BUILD_NUMBER}
-                    docker push 242201296943.dkr.ecr.us-east-1.amazonaws.com/adservice:${BUILD_NUMBER}
+                    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 992382841236.dkr.ecr.us-east-1.amazonaws.com
+                    docker tag adservice:latest 992382841236.dkr.ecr.us-east-1.amazonaws.com/adservice:${BUILD_NUMBER}
+                    docker push 992382841236.dkr.ecr.us-east-1.amazonaws.com/adservice:${BUILD_NUMBER}
                     '''
                 }
             }
